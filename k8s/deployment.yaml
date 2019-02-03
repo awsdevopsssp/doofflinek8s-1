@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ssp-nodejs-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ssp-nodejs
+    spec:
+      containers:
+      - name: ssp-nodejs
+        image: <Docker-image-name> # From Docker hub
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9090
